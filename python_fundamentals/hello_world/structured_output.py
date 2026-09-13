@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-lang = "python"
+lang = Python"
 version = 3
 pi_val = 3.14159
 is_valid = 10 > 2
