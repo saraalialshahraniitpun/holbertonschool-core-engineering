@@ -4,7 +4,10 @@
 
 
 class Square:
-    """A Square class with size, position, printing, and string representation."""
+    """A Square class with size, position, printing,
+
+    and string representation.
+    """
 
     def __init__(self, size=0, position=(0, 0)):
         """Initialize the square with size and position."""
@@ -48,10 +51,10 @@ class Square:
         if self.__size == 0:
             print()
             return
-        
+
         for _ in range(self.__position[1]):
             print()
-        
+
         for _ in range(self.__size):
             print(" " * self.__position[0] + "#" * self.__size)
 
@@ -60,11 +63,11 @@ class Square:
         result = []
         if self.__size == 0:
             return ""
-        
+
         for _ in range(self.__position[1]):
             result.append("")
-        
+
         for _ in range(self.__size):
             result.append(" " * self.__position[0] + "#" * self.__size)
-            
+
         return "\n".join(result)
