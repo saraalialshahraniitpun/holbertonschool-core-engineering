@@ -23,9 +23,8 @@ class VerboseList(list):
         super().remove(item)
 
     def pop(self, index=-1):
-        """Remove and return item at index (default last) and print notice."""
-        # To match exact example outputs where the popped item value is printed:
-        # We peek the item before popping it using standard indexing.
-        item = self[index]
-        super().pop(index)
-        print("Popped [{}] from the list.".format(item))
+     """Remove and return item at index (default last) and print notice."""
+     item = self[index]
+     super().pop(index)
+     print("Popped [{}] from the list.".format(item))
+     return item
