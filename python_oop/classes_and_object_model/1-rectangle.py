@@ -1,70 +1,40 @@
 #!/usr/bin/env python3
-"""Module that defines a Square class with position and string representation.
+"""Module that defines a Rectangle class with width and height.
 """
 
 
-class Square:
-    """A Square class with size, position, printing, and string representation."""
+class Rectangle:
+    """A Rectangle class with private width and height attributes."""
 
-    def __init__(self, size=0, position=(0, 0)):
-        """Initialize the square with size and position."""
-        self.size = size
-        self.position = position
+    def __init__(self, width=0, height=0):
+        """Initialize the rectangle with width and height."""
+        self.width = width
+        self.height = height
 
     @property
-    def size(self):
-        """Retrieve the size."""
-        return self.__size
+    def width(self):
+        """Retrieve the width."""
+        return self.__width
 
-    @size.setter
-    def size(self, value):
-        """Set the size with validation."""
+    @width.setter
+    def width(self, value):
+        """Set the width with validation."""
         if not isinstance(value, int):
-            raise TypeError("size must be an integer")
+            raise TypeError("width must be an integer")
         if value < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = value
+            raise ValueError("width must be >= 0")
+        self.__width = value
 
     @property
-    def position(self):
-        """Retrieve the position."""
-        return self.__position
+    def height(self):
+        """Retrieve the height."""
+        return self.__height
 
-    @position.setter
-    def position(self, value):
-        """Set the position with validation."""
-        if (not isinstance(value, tuple) or len(value) != 2 or
-                not all(isinstance(num, int) for num in value) or
-                not all(num >= 0 for num in value)):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
-
-    def area(self):
-        """Return the current square area."""
-        return self.__size ** 2
-
-    def my_print(self):
-        """Print the square with character # and position offsets."""
-        if self.__size == 0:
-            print()
-            return
-        
-        for _ in range(self.__position[1]):
-            print()
-        
-        for _ in range(self.__size):
-            print(" " * self.__position[0] + "#" * self.__size)
-
-    def __str__(self):
-        """Define string representation of the Square."""
-        result = []
-        if self.__size == 0:
-            return ""
-        
-        for _ in range(self.__position[1]):
-            result.append("")
-        
-        for _ in range(self.__size):
-            result.append(" " * self.__position[0] + "#" * self.__size)
-            
-        return "\n".join(result)
+    @height.setter
+    def height(self, value):
+        """Set the height with validation."""
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
