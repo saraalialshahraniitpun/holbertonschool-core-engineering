@@ -1,0 +1,25 @@
+classDiagram
+    class User {
+        +str name
+        +str user_id
+        +request_loan()
+    }
+    class Library {
+        +create_loan()
+    }
+    class Book {
+        +str title
+        +str author
+        +bool available
+        +mark_unavailable()
+    }
+    class Loan {
+        +str date
+        +User user
+        +Book book
+    }
+    Library "1" --> "*" Book : manages
+    Library "1" --> "*" Loan : creates
+    User "1" --> "*" Loan : requests
+    Loan "*" --> "1" User : belongs to
+    Loan "*" --> "1" Book : references
