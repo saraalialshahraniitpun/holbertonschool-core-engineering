@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebSocket Chat Client</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="chat-container">
+    <header class="chat-header">
+      <h1>WebSocket Chat</h1>
+      <span id="status" class="status disconnected">Disconnected</span>
+    </header>
+
+    <div id="messages" class="messages" aria-live="polite"></div>
+
+    <form id="chat-form" class="chat-form">
+      <input
+        type="text"
+        id="username-input"
+        class="input-username"
+        placeholder="Username (optional)"
+        autocomplete="off"
+      >
+      <input
+        type="text"
+        id="message-input"
+        class="input-message"
+        placeholder="Type a message..."
+        autocomplete="off"
+        required
+      >
+      <button type="submit" id="send-btn" class="send-btn">Send</button>
+    </form>
+  </main>
+
+  <script src="chat.js"></script>
+</body>
+</html>
